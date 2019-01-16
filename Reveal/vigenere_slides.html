@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vigenère cipher</title>
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <!--Add support for earlier versions of Internet Explorer -->
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+  <div class="slides">
+    <section>
+      <h1>Vigenère Cipher</h1>
+      <p>
+        This slides provides a graphical representation of an example of Vigenère Cipher Encryption
+      </p><br><br><br>
+      <small style="float: right;">*: use <em>spacebar</em> to go to next slide, and <em>esc</em> for overview</small>
+    </section>
+
+    <section>
+      <h2>Keyword</h2>
+      <p>
+        Alice (sender) and Bob (recipient) agreed <br>on the keyword: <em><b>lemon</b></em>
+      </p>
+    </section>
+
+    <section>
+      <h2>Plaintext</h2>
+      <p>
+        Alice would like to send this message to Bob:
+      </p>
+      <blockquote>
+        &ldquo;Attack now&rdquo;
+      </blockquote>
+    </section>
+
+    <section>
+    <section>
+      <h2>Pre-Encryption</h2>
+      <p>
+        Alice will extend the keyword to the length of her message (trim the space):
+      </p>
+      <p style="font-family: monospace;">
+        ATTACKNOW<br>
+        LEMONLEMO
+      </p>
+    </section>
+
+    <section>
+      <h2>Pre-Encryption</h2>
+      <p>
+        Encryption and Decryption involve the <b>Vigenère Square</b>, which consists of combination
+        of multiple shifts of Caesar Cipher:
+      </p>
+      <img src="vigenere/vigenereSq.png" style="border: none;" width="350px" height="400px">
+    </section>
+    </section>
+
+    <section>
+      <h2>Encryption - Rules</h2>
+      <ol>
+        <li>Every letter in the plaintext corresponds with the letter in keyword in regards to its position.</li>
+        <li>Encryption is done, one letter of the plaintext and one letter of keyword, at one time.</li>
+        <li>The letter in keyword correspond to the same letter in Vigenere Square's ROW</li>
+        <li>The letter in plaintext correspond to the same letter in Vignere Square's COLUMN</li>
+        <li>The intersected letter will be the ciphertext for that letter in plaintext.</li>
+      </ol>
+    </section>
+
+    <section>
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">A</span>TTACKNOW<br>
+        <span class="fragment fade-out" data-fragment-index="1">L</span>EMONLEMO
+      </p>
+      <img src="vigenere/1-A&L.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        <span class="fragment current-visable" data-fragment-index="2">L</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1"> T</span>TACKNOW<br>
+        <span class="fragment fade-out" data-fragment-index="1"> E</span>MONLEMO
+      </p>
+      <img src="vigenere/2-T&E.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        L
+        <span class="fragment current-visable" data-fragment-index="2">X</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">  T</span>ACKNOW<br>
+        <span class="fragment fade-out" data-fragment-index="1">  M</span>ONLEMO
+      </p>
+      <img src="vigenere/3-T&M.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LX
+        <span class="fragment current-visable" data-fragment-index="2">F</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">   A</span>CKNOW<br>
+        <span class="fragment fade-out" data-fragment-index="1">   O</span>NLEMO
+      </p>
+      <img src="vigenere/4-A&O.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXF
+        <span class="fragment current-visable" data-fragment-index="2">O</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">    C</span>KNOW<br>
+        <span class="fragment fade-out" data-fragment-index="1">    N</span>LEMO
+      </p>
+      <img src="vigenere/5-C&N.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXFO
+        <span class="fragment current-visable" data-fragment-index="2">P</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">     K</span>NOW<br>
+        <span class="fragment fade-out" data-fragment-index="1">     L</span>EMO
+      </p>
+      <img src="vigenere/6-K&L.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXFOP
+        <span class="fragment current-visable" data-fragment-index="2">V</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">      N</span>OW<br>
+        <span class="fragment fade-out" data-fragment-index="1">      E</span>MO
+      </p>
+      <img src="vigenere/7-N&E.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXFOPV
+        <span class="fragment current-visable" data-fragment-index="2">R</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">       O</span>W<br>
+        <span class="fragment fade-out" data-fragment-index="1">       M</span>O
+      </p>
+      <img src="vigenere/8-O&M.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXFOPVR
+        <span class="fragment current-visable" data-fragment-index="2">A</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        <span class="fragment fade-out" data-fragment-index="1">        W</span><br>
+        <span class="fragment fade-out" data-fragment-index="1">        O</span>
+      </p>
+      <img src="vigenere/9-W&O.png" style="border: none;" width="350px" height="390px">
+      <p style="font-family:monospace;">
+        LXFOPVRA
+        <span class="fragment current-visable" data-fragment-index="2">K</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p style="font-family: monospace;">
+        ATTACKNOW<br>
+        LEMONLEMO
+      </p>
+      <img src="vigenere/vigenereSq.png" width="350px" height="390px" style="border: none;">
+      <p style="font-family: monospace;">
+        LXFOPVRAK
+      </p>
+    </section>
+    </section>
+
+    <section>
+      <h2>Decryption</h2>
+      <p>
+        Decryption follows the same principle of encryption (work backwards):<br>
+        Look for the corresponding letter in the <em>column</em> of the ciphertext and keyword using <em><b>Vigenère Square</b></em>.
+      </p>
+    </section>
+
+    <section style="text-align: left;">
+      <h1>The End</h1>
+      <p>
+        - <a href="../VigenereCipher/vigenere.html">Go back to Vigenère Cipher Demo</a>
+      </p>
+    </section>
+  </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+		});
+	</script>
+</body>
+</html>

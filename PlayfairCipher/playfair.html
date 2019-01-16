@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Playfair cipher</title>
+
+    <!-- Bootscrap Core CSS and JS -->
+    <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+
+    <!-- Bootscrap Core CSS and JS -->
+    <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+    <script src="../jquery.min.js"></script>
+    <!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+    <script src="../bootstrap.min.js"></script>  
+    
+    <!-- style -->
+    <style type = "text/css">
+    th, td {
+        padding: 10px;
+    }
+    textarea {
+        resize: none;
+        font-family: monospace;
+    }
+    </style>
+
+    <!-- javascript for Playfair -->
+    <script src="playfair.js"></script>
+
+</head>
+
+<body>
+
+  <!-- nav bar begins -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="../../index.html">Crypto demos</a>
+          </div>
+          <div>
+              <ul class="nav navbar-nav">
+                  <li><a href="../index.html">Classical ciphers</a>
+                  </li>
+                  <li><a href="../CaesarCipher/caesar.html">Caesar Cipher</a>
+                  </li>
+                  <li class="active"><a href="../PlayfairCipher/playfair.html">Playfair Cipher</a>
+                  </li>
+                  <li><a href="../VigenereCipher/vigenere.html">Vigenère Cipher</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+  <!-- nav bar ends -->
+
+    <!-- actual content -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Playfair Cipher</h1>
+            <br>
+
+            <form id="myForm" method="post">
+            <table cellpadding="10">
+            <!-- get keyword -->
+            <tr>
+                <td>
+                    <label for="keyword">Keyword: </label>
+                </td>
+                <td>
+                    <input type="text" name="keyword" id="keyword" size="15" onchange="Table.value=makeTableau(keyword.value)">
+                </td>
+            </tr>
+
+            <!-- Table -->
+            <tr>
+              <td><label for="Table">Table: </label></td>
+              <td><textarea style="font-family:monospace; font-size:16px;" rows="6" name="Table" cols="10" readonly></textarea></td>
+            </tr>
+
+            <!-- get message -->
+            <tr>
+              <td><label for="message">Plaintext: </label></td>
+              <td><textarea rows="4" cols="25" name="plainText"></textarea></td>
+              <td><label for="message">Ciphertext: </label></td>
+              <td><textarea rows="4" cols="25" name="cipherText"></textarea></td>
+            </tr>
+
+            <!-- submit button -->
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="Encrypt!" onclick="plainDigraph.innerHTML=encrypt(plainText.value,keyword.value)"/>
+                </td>
+                <td></td>
+                <td>
+                    <input type="button" value="Decrypt!" onclick="cipherDigraph.innerHTML=decrypt(cipherText.value,keyword.value)"/>
+                </td>
+            </tr>
+
+            <tr>
+              <td><label for="plainDigraphLabel">Plaintext Digraph: </label></td>
+              <td>
+                <div id="plainDigraph" style="font-family:monospace"></div>
+              </td>
+              <td><label for="cipherDigraphLabel">Ciphertext Digraph: </label></td>
+              <td>
+                <div id="cipherDigraph" style="font-family:monospace"></div>
+              </td>
+            </tr>
+            <tr>
+                <td><label for="resultantMsg">Ciphertext: </label></td>
+                <td>
+                  <div id="ciphertext" style="font-family:monospace"></div>
+                </td>
+                <td><label for="resultantMsg">Plaintext: </label></td>
+                <td>
+                  <div id="plaintext" style="font-family:monospace"></div>
+                </td>
+            </tr>
+            </table>
+            </form>
+
+            <br><br>
+            * - J is considered equivalent to I<br>
+            <small>Click <a href="../Reveal/playfair_slides.html">here</a> for illustration explaination of Playfair Cipher.</small>
+
+        </div>
+    </div>
+
+</body>
+</html>

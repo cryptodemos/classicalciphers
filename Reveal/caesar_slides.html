@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Caesar cipher</title>
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <!--Add support for earlier versions of Internet Explorer -->
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+  <div class="slides">
+    <section>
+      <h1>Caesar Cipher</h1>
+      <p>
+        This slides provides a graphical representation of an example of Caesar Cipher Encryption
+      </p><br><br><br><br><br>
+      <small style="float: right;">*: use <em>spacebar</em> to go to next slide, and <em>esc</em> for overview</small>
+    </section>
+
+    <section>
+      <h2>K-Shift</h2>
+      <p>
+        Alice (sender) and Bob (recipient) agreed <br>on the number of shift: <em><b>3</b></em>
+      </p>
+      <table>
+        <tr>
+          <td><img src="caesar/k-shift copy.png" width="600px" height="170px"style="border: none;"></td>
+          <td><img src="caesar/wheel_plain.png" width="300px" height="299px" style="border: none;"></td>
+        </tr>
+      </table>
+
+      <br><small>In the case of ROT13, shift value is always <em><b>13</b></em></small>
+    </section>
+
+    <section>
+      <h2>Plaintext</h2>
+      <p>
+        Alice would like to send this message to Bob:
+      </p>
+      <blockquote>
+        &ldquo;RUN!&rdquo;
+      </blockquote>
+    </section>
+
+    <section>
+    <section>
+      <h2>Encryption</h2>
+      <p>
+        <span class="fragment fade-out" data-fragment-index="1">R</span>
+        <span>UN!</span>
+      </p>
+      <img src="caesar/1-R-U.png" width="300px" height="300px" style="border: none;">
+      <p>
+        <span class="fragment current-visable" data-fragment-index="2">U</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p>
+        <span class="fragment fade-out" data-fragment-index="1">U</span>
+        <span>N!</span>
+      </p>
+      <img src="caesar/2-U-X.png" width="300px" height="300px" style="border: none;">
+      <p>
+        <span>U</span>
+        <span class="fragment current-visable" data-fragment-index="2">X</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p>
+        <span class="fragment fade-out" data-fragment-index="1">N!</span>
+      </p>
+      <img src="caesar/3-N-Q.png" width="300px" height="300px" style="border: none;">
+      <p>
+        <span>UX</span>
+        <span class="fragment current-visable" data-fragment-index="2">Q!</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Encryption</h2>
+      <p>
+        Plaintext: RUN!
+      </p>
+      <img src="caesar/wheel_plain.png" width="300px" height="300px" style="border: none;">
+      <p>
+        Ciphertext: UXQ!
+      </p>
+    </section>
+    </section>
+
+    <section>
+      <h2>Decryption</h2>
+      <p>
+        Decryption follows the same principle of encryption using the <b>Ciphertext</b> and <b><em>shift backwards</em></b>.
+      </p>
+    </section>
+
+    <section style="text-align: left;">
+      <h1>The End</h1>
+      <p>
+        - <a href="../CaesarCipher/caesar.html">Go back to Caesar Cipher Demo</a>
+      </p>
+    </section>
+  </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+		});
+	</script>
+
+</body>
+</html>

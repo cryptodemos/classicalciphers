@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vigenère cipher</title>
+
+  <!-- Bootscrap Core CSS and JS -->
+  <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script-->
+    <!-- Bootscrap Core CSS and JS -->
+    <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+    <script src="../jquery.min.js"></script>
+    <!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+    <script src="../bootstrap.min.js"></script>  
+  <script type="text/javascript" src="vigenere.js"></script>
+
+</head>
+
+<body>
+  <!-- nav bar begins -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="../../index.html">Crypto demos</a>
+          </div>
+          <div>
+              <ul class="nav navbar-nav">
+                  <li><a href="../index.html">Classical ciphers</a>
+                  </li>
+                  <li><a href="../CaesarCipher/caesar.html">Caesar Cipher</a>
+                  </li>
+                  <li><a href="../PlayfairCipher/playfair.html">Playfair Cipher</a>
+                  </li>
+                  <li class="active"><a href="../VigenereCipher/vigenere.html">Vigenère Cipher</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+  <!-- nav bar ends -->
+
+  <div class="container">
+  <div class="jumbotron">
+    <h1>Vigenère Cipher</h1><br>
+    <form name="myForm" method="post">
+      <div class="row">
+      <div class="table-responsive col-md-6">
+      <table cellpadding="10">
+        <tr>
+          <td colspan="2" style="text-align:center"><h3>ENCRYPT</h3></td>
+        </tr>
+        <!-- get plainText -->
+        <tr>
+          <td style="padding: 10px;"><label for="messageLabel">Plaintext: </label></td>
+          <td style="padding: 10px;"><textarea id="plainInput" rows="3" cols="30" required></textarea></td>
+        </tr>
+
+        <!-- get keyword -->
+        <tr>
+          <td style="padding: 10px;"><label for="keywordLabel">Keyword: </label></td>
+          <td style="padding: 10px;"><input type="text" name="keyword" id="plainKeyword" size="30"> </td>
+        </tr>
+
+        <!-- generated given plaintext here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultKeywordLabel">Given Plaintext: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="plainGivenMessage" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+        <!-- generated resultant keyword here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultKeywordLabel">Resultant keyword: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="plainResultKeyword" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+        <!-- generated ciphertext here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultLabel">Ciphertext: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="cipherText" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="text-align:center"><h3>DECRYPT</h3></td>
+        </tr>
+
+        <!-- get ciphertext -->
+        <tr>
+          <td style="padding: 10px;"><label for="messageLabel">Ciphertext: </label></td>
+          <td style="padding: 10px;"><textarea id="cipherInput" rows="3" cols="30" required></textarea></td>
+        </tr>
+
+        <!-- get keyword -->
+        <tr>
+          <td style="padding: 10px;"><label for="keywordLabel">Keyword: </label></td>
+          <td style="padding: 10px;"><input type="text" name="keyword" id="cipherKeyword" size="30"> </td>
+        </tr>
+
+        <!-- generated given ciphertext here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultKeywordLabel">Given Ciphertext: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="cipherGivenMessage" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+        <!-- generated resultant keyword here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultKeywordLabel">Resultant keyword: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="cipherResultKeyword" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+        <!-- generated plaintext here -->
+        <tr>
+            <td style="padding: 10px;">
+                <label for="resultLabel">Plaintext: </label>
+            </td>
+            <td style="padding: 10px;">
+                <div id="plainText" style="font-family: monospace;"></div>
+            </td>
+        </tr>
+
+      </table>
+      </div>
+    </form>
+
+
+    <div class="table-responsive col-md-6">
+    <table>
+        <tr>
+          <td>
+            <iframe width="480px" height="650px"src="vigenereSquare.html" frameBorder="0"></iframe>
+            <small>Letter from <b style="color:red">red</b> refers to letters from <b>KEYWORD</b>.<br>
+            Letter from <b style="color:blue">blue</b> refers to letters from your <b>PLAINTEXT</b>.<br>
+            </small>
+          </td>
+        </tr>
+    </table></div>
+
+  </div>
+
+  <br><br>
+
+  <small>Click <a href="../Reveal/vigenere_slides.html">here</a> for illustration explaination of Vigenère Cipher.</small>
+  </div>
+  </div>
+</body>
+
+</html>

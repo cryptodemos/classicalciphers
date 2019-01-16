@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Playfair cipher</title>
+  <link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <!--Add support for earlier versions of Internet Explorer -->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Playfair Cipher</h1>
+        <p>This slides provides a graphical representation of an example of Playfair Cipher Encryption</p><br><br><br><br><br>
+        <small style="float: right;">*: use <em>spacebar</em> to go to next slide, and <em>esc</em> for overview</small>
+      </section>
+
+      <section>
+        <h2>Keyword</h2>
+        <p>Alice (sender) and Bob (recipient) agreed on an keyword: <br><strong><em>JUSTIFY</em></strong></p>
+      </section>
+
+      <section>
+        <h2>Table</h2>
+        <p>
+          A 5x5 Table will be constructed from the keyword, <strong>JUSTIFY</strong>, and all remaining alphabets.<br>
+          <em>*Note: letter J is considered equivalent to letter I</em><br><br>
+          <table style="font-family: monospace;" class="fragment">
+            <tr>
+              <td>I</td>
+              <td>U</td>
+              <td>S</td>
+              <td>T</td>
+              <td>F</td>
+            </tr>
+            <tr>
+              <td>Y</td>
+              <td>A</td>
+              <td>B</td>
+              <td>C</td>
+              <td>D</td>
+            </tr>
+            <tr>
+              <td>E</td>
+              <td>G</td>
+              <td>H</td>
+              <td>K</td>
+              <td>L</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>N</td>
+              <td>O</td>
+              <td>P</td>
+              <td>Q</td>
+            </tr>
+            <tr>
+              <td>R</td>
+              <td>V</td>
+              <td>W</td>
+              <td>X</td>
+              <td>Z</td>
+            </tr>
+          </table>
+        </p>
+      </section>
+
+      <section>
+      <section>
+        <h2>Digraph - message</h2>
+        <p>
+          Alice would like to send this message to Bob:
+        </p>
+        <blockquote>
+          &ldquo;secret messages&rdquo;
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Digraph - Rules</h2>
+        <p>Alice's message must be processed through these following rules:</p>
+        <ol>
+          <li class="fragment">Letters in the message must be split into <em>PAIRS</em></li>
+          <li class="fragment">Separate duplicated letters by inserting <em>X</em></li>
+          <li class="fragment">Insert <em>X</em> when there is an odd letter at the end of the message</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Digraph - Processing</h2>
+        <p class="fragment fade-out" data-fragment-index="1">SECRET MESSAGES</p>
+        <p style="font-family: monospace;" class="fragment current-visable" data-fragment-index="2">
+          <span class="fragment fade-out" data-fragment-index="3">SE</span>
+          <span class="fragment fade-out" data-fragment-index="5">CR</span>
+          <span class="fragment fade-out" data-fragment-index="7">ET</span>
+          <span class="fragment fade-out" data-fragment-index="9">ME</span>
+          <span class="fragment fade-out" data-fragment-index="11">SS</span>
+          <span class="fragment fade-out" data-fragment-index="13">A</span>
+          <span class="fragment fade-out" data-fragment-index="15">GE</span>
+          <span class="fragment fade-out" data-fragment-index="17">S</span>
+        </p>
+        <p style="font-family: monospace;">
+          <span class="fragment current-visable" data-fragment-index="4">SE </span>
+          <span class="fragment current-visable" data-fragment-index="6">CR </span>
+          <span class="fragment current-visable" data-fragment-index="8">ET </span>
+          <span class="fragment current-visable" data-fragment-index="10">ME </span>
+          <span class="fragment current-visable" data-fragment-index="12">SX </span>
+          <span class="fragment current-visable" data-fragment-index="14">SA </span>
+          <span class="fragment current-visable" data-fragment-index="16">GE </span>
+          <span class="fragment current-visable" data-fragment-index="18">SX </span>
+        </p>
+      </section>
+      </section>
+
+      <section>
+        <h2>Encryption - Rules</h2>
+        <p>
+        The encryption involves taking the pairs from digraph
+        and process the following rules with the Table:
+        </p>
+        <ol>
+          <li class="fragment">IF in same <strong>row</strong>
+            <ul>
+              <li class="fragment">Move to the right by one column</li>
+              <li class="fragment">Wrap around the same row if end of row is reached</li>
+            </ul>
+          </li>
+          <li class="fragment">IF in same <strong>column</strong>
+            <ul>
+              <li class="fragment">Move down by one row</li>
+              <li class="fragment">Wrap around the same column if end of column is reached</li>
+            </ul>
+          </li>
+          <li class="fragment">IF it forms a <strong>rectangle</strong>
+            <ul>
+              <li class="fragment">Swap the letters with the ones at the end of the rectangle</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">SE </span>
+          <span>CR ET ME SX SA GE SX</span>
+        </p>
+        <img src="playfair/1-SE-IH.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span class="fragment current-visable" data-fragment-index="2">IH </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">   CR </span>
+          <span>ET ME SX SA GE SX</span>
+        </p>
+        <img src="playfair/2-CR-YX.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH </span>
+          <span class="fragment current-visable" data-fragment-index="2">YX </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">      ET </span>
+          <span>ME SX SA GE SX</span>
+        </p>
+        <img src="playfair/3-ET-KI.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX </span>
+          <span class="fragment current-visable" data-fragment-index="2">KI </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">         ME </span>
+          <span>SX SA GE SX</span>
+        </p>
+        <img src="playfair/4-ME-RM.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX KI </span>
+          <span class="fragment current-visable" data-fragment-index="2">RM </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">            SX </span>
+          <span>SA GE SX</span>
+        </p>
+        <img src="playfair/5-SX-TW.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX KI RM </span>
+          <span class="fragment current-visable" data-fragment-index="2">TW </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">               SA </span>
+          <span>GE SX</span>
+        </p>
+        <img src="playfair/6-SA-UB.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX KI RM TW </span>
+          <span class="fragment current-visable" data-fragment-index="2">UB </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">                  GE </span>
+          <span>SX</span>
+        </p>
+        <img src="playfair/7-GE-HG.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX KI RM TW UB </span>
+          <span class="fragment current-visable" data-fragment-index="2">HG </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          <span class="fragment fade-out" data-fragment-index="1">                     SX</span>
+        </p>
+        <img src="playfair/5-SX-TW.jpg" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          <span>IH YX KI RM TW UB HG </span>
+          <span class="fragment current-visable" data-fragment-index="2">TW </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Encryption</h2>
+        <p style="font-family: monospace;">
+          Plaintext Digraph: SE CR ET ME SX SA GE SX
+        </p>
+        <img src="playfair/0-plain.png" width="300px" height="300px">
+        <p style="font-family: monospace;">
+          Encrypted Digraph: IH YX KI RM TW UB HG TW
+        </p>
+      </section>
+      </section>
+
+      <section>
+        <h2>Decryption</h2>
+        <p>
+          Decryption will involve the <b>same Table</b> and use the <b>encrypted digraph</b> and decrypt using the <b><em>same rules</em></b> for encryption
+          - except the <em>opposite direction</em>.
+        </p>
+      </section>
+
+      <section style="text-align: left;">
+        <h1>The End</h1>
+        <p>
+          - <a href="../PlayfairCipher/playfair.html">Go back to Playfair Demo</a>
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript" src="vignere.js"></script>
+  <link rel="stylesheet" href="vigenere.css" type="text/css">
+</head>
+
+<body>
+<table>
+  <thead style="color: blue">
+    <tr>
+      <th></th>
+      <th class="col">A</th>
+      <th class="col">B</th>
+      <th class="col">C</th>
+      <th class="col">D</th>
+      <th class="col">E</th>
+      <th class="col">F</th>
+      <th class="col">G</th>
+      <th class="col">H</th>
+      <th class="col">I</th>
+      <th class="col">J</th>
+      <th class="col">K</th>
+      <th class="col">L</th>
+      <th class="col">M</th>
+      <th class="col">N</th>
+      <th class="col">O</th>
+      <th class="col">P</th>
+      <th class="col">Q</th>
+      <th class="col">R</th>
+      <th class="col">S</th>
+      <th class="col">T</th>
+      <th class="col">U</th>
+      <th class="col">V</th>
+      <th class="col">W</th>
+      <th class="col">X</th>
+      <th class="col">Y</th>
+      <th class="col">Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="row" style="color: red">A</th>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">B</th>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">C</th>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">D</th>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">E</th>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">F</th>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">G</th>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">H</th>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">I</th>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">J</th>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">K</th>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">L</th>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">M</th>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">N</th>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">O</th>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">P</th>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">Q</th>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">R</th>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">S</th>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">T</th>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">U</th>
+      <td>U</td><td>V</td><td>W</td><td>X</td>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">V</th>
+      <td>V</td><td>W</td><td>X</td><td>Y</td>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">W</th>
+      <td>W</td><td>X</td><td>Y</td><td>Z</td>
+      <td>A</td><td>B</td><td>C</td><td>D</td>
+      <td>E</td><td>F</td><td>G</td><td>H</td>
+      <td>I</td><td>J</td><td>K</td><td>L</td>
+      <td>M</td><td>N</td><td>O</td><td>P</td>
+      <td>Q</td><td>R</td><td>S</td><td>T</td>
+      <td>U</td><td>V</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">X</th>
+      <td>X</td><td>Y</td><td>Z</td><td>A</td>
+      <td>B</td><td>C</td><td>D</td><td>E</td>
+      <td>F</td><td>G</td><td>H</td><td>I</td>
+      <td>J</td><td>K</td><td>L</td><td>M</td>
+      <td>N</td><td>O</td><td>P</td><td>Q</td>
+      <td>R</td><td>S</td><td>T</td><td>U</td>
+      <td>V</td><td>W</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">Y</th>
+      <td>Y</td><td>Z</td><td>A</td><td>B</td>
+      <td>C</td><td>D</td><td>E</td><td>F</td>
+      <td>G</td><td>H</td><td>I</td><td>J</td>
+      <td>K</td><td>L</td><td>M</td><td>N</td>
+      <td>O</td><td>P</td><td>Q</td><td>R</td>
+      <td>S</td><td>T</td><td>U</td><td>V</td>
+      <td>W</td><td>X</td>
+    </tr>
+
+    <tr>
+      <th class="row" style="color: red">Z</th>
+      <td>Z</td><td>A</td><td>B</td><td>C</td>
+      <td>D</td><td>E</td><td>F</td><td>G</td>
+      <td>H</td><td>I</td><td>J</td><td>K</td>
+      <td>L</td><td>M</td><td>N</td><td>O</td>
+      <td>P</td><td>Q</td><td>R</td><td>S</td>
+      <td>T</td><td>U</td><td>V</td><td>W</td>
+      <td>X</td><td>Y</td>
+    </tr>
+  <tbody>
+</table>
+</body>
+</html>
